@@ -1,3 +1,7 @@
+from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
+from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
+from clarifai_grpc.grpc.api.status import status_code_pb2
+import streamlit as st
 
 ######################################################################################################
 # In this section, we set the user authentication, user and app ID, model details, and the URL of 
@@ -18,10 +22,7 @@ TEXT_FILE_URL = 'https://samples.clarifai.com/negative_sentence_12.txt'
 # YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
 ############################################################################
 
-from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
-from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
-from clarifai_grpc.grpc.api.status import status_code_pb2
-import streamlit as st
+
 
 def get_response(prompt):
     channel = ClarifaiChannel.get_grpc_channel()
